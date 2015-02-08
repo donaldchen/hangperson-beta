@@ -14,8 +14,8 @@ class HangpersonGame
   	raise(ArgumentError, 'guess must not be empty or nil') if letter == '' or letter == nil
   	raise(ArgumentError, 'guess must be a letter') unless letter =~ /[A-Za-z]/ 
   	guess_list = self.wrong_guesses
-  	guess_list = self.guesses if /#{letter}/ =~ self.word
-  	return false if /#{letter}/ =~ guess_list
+  	guess_list = self.guesses if /#{letter.downcase}/ =~ self.word
+  	return false if /#{letter.downcase}/ =~ guess_list
 	guess_list.concat(letter)
   end
 
