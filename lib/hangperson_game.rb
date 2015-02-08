@@ -28,7 +28,7 @@ class HangpersonGame
   end
 
   def check_win_or_lose
-  	if self.wrong_guesses.length + self.guesses.length < 7
+  	if self.wrong_guesses.length < 7
   		status = :win
   		self.word.split('').each do |letter|
   			status = :play unless /#{letter}/ =~ self.guesses
